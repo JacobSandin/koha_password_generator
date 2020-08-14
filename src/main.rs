@@ -8,7 +8,7 @@ fn main() {
 
     if args.get(1).is_some() {
         let arg = args.get(1).unwrap();
-        if args.contain("sql") {
+        if args.contains(&"sql".to_string()) {
             print_sql_and_prompt();
         } else {
             let output = hash_with_result(arg, 8).unwrap();
