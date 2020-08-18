@@ -1,3 +1,0 @@
-$2a$08$0iz6MBMBy91ADng68qLF3.GPg5AxK3XivhFQip0MizlDJ1ngD/z1i
-INSERT INTO `db`.`borrowers` (`borrowernumber`, `cardnumber`, `firstname`, `branchcode`, `categorycode`, `password`, `userid`) 
-                                           VALUES ('borrowernumber', 'cardnumber', 'firstname',  'branchcode', 'cardnumber', 'password', 'userid');

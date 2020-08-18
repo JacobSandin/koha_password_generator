@@ -22,7 +22,7 @@ fn main() {
 
 fn print_sql_and_prompt() {
     // Make  the function prin
-    let database = ask("Database name: ");
+    //    let database = ask("Database name: ");
     let borrowernumber = ask("Borrowernumber: ");
     let cardnumber = ask("Cardnumber: ");
     let branchcode = ask("Branchcode: ");
@@ -32,18 +32,52 @@ fn print_sql_and_prompt() {
     let password = get_password(&password);
     let userid = ask("Userid: ");
     let firstname = ask("Firstname: ");
+    let surname = ask("Surname: ");
+    let dateenrolled = "2020-10-04";
+    let dateexpiry = "2852-10-04";
+    let updated_on = "2020-10-04";
 
-    println!("INSERT INTO `{database}`.`borrowers` (`borrowernumber`, `cardnumber`, `firstname`, `branchcode`, `categorycode`, `password`, `userid`) 
-                                           VALUES ('{borrowernumber}', '{cardnumber}', '{firstname}',  '{branchcode}', '{categorycode}', '{password}', '{userid}');",
-    database=database,
-    borrowernumber=borrowernumber,
-    cardnumber=cardnumber,
-    branchcode=branchcode,
-    categorycode=categorycode,
-    password=password,
-    userid=userid,
-    firstname=firstname,
-   );
+    println!(
+        "INSERT INTO `borrowers` (
+    `borrowernumber`, 
+    `cardnumber`, 
+    `surname`, 
+    `firstname`, 
+    `branchcode`, 
+    `categorycode`, 
+    `dateenrolled`, 
+    `dateexpiry`, 
+    `password`, 
+    `flags`, 
+    `userid`, 
+    `updated_on`
+    ) 
+VALUES (
+    '{borrowernumber}', 
+    '{cardnumber}', 
+    '{surname}', 
+    '{firstname}', 
+    '{branchcode}', 
+    '{categorycode}', 
+    '{dateenrolled}', 
+    '{dateexpiry}', 
+    '{password}', 
+    '1', 
+    '{userid}', 
+    '{updated_on}'
+    );",
+        borrowernumber = borrowernumber,
+        cardnumber = cardnumber,
+        branchcode = branchcode,
+        categorycode = categorycode,
+        dateenrolled = dateenrolled,
+        dateexpiry = dateexpiry,
+        password = password,
+        userid = userid,
+        firstname = firstname,
+        surname = surname,
+        updated_on = updated_on,
+    );
 }
 
 fn get_password(passwd: &str) -> String {
